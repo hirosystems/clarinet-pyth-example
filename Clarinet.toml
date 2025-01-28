@@ -1,0 +1,20 @@
+[project]
+name = 'pyth-client'
+description = ''
+authors = []
+telemetry = false
+cache_dir = './.cache'
+
+[[project.requirements]]
+contract_id = 'SP3R4F6C1J3JQWWCVZ3S7FRRYPMYG6ZW6RZK31FXY.pyth-storage-v3'
+
+[contracts.get-price]
+path = 'contracts/get-price.clar'
+clarity_version = 3
+epoch = 3.1
+
+
+[repl.remote_data]
+enabled = true
+api_url = "http://api.hiro.so"
+initial_height = 522000
