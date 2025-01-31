@@ -25,3 +25,10 @@
     ))
   )
 )
+
+
+(define-data-var count uint u10)
+
+(define-read-only (get-count)
+  (var-get count)
+)
