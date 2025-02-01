@@ -10,7 +10,7 @@ $ npm t
 ## Details
 
 This project currently uses clarinet-sdk latest beta
-(`"@hirosystems/clarinet-sdk": "^2.13.0-beta12"` or above).
+(`"@hirosystems/clarinet-sdk": "^2.13.0-beta15"` or above).
 
 
 ```toml
