@@ -26,9 +26,7 @@
   )
 )
 
-
-(define-data-var count uint u10)
-
-(define-read-only (get-count)
-  (var-get count)
+;; why not adding a sbtc contract-call? as well
+(define-read-only (get-sbtc-total-sup)
+  (contract-call? 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token get-total-supply)
 )
