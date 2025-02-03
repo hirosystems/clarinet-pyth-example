@@ -12,6 +12,13 @@ $ npm t
 This project currently uses clarinet-sdk latest beta
 (`"@hirosystems/clarinet-sdk": "^2.13.0-beta15"` or above).
 
+### Enable remote data fetching
+
+Remote data fetching is enabled with the following setting.
+The Simnet will fork mainnet from block 522000.
+
+> [!IMPORTANT]  
+> This is still in beta and could change in the near future.
 
 ```toml
 # clarinet.toml
@@ -21,7 +28,11 @@ api_url = "https://api.hiro.so"
 initial_height = 522000
 ```
 
-See usage examples in the test file:
+### Usage
+
+See usage examples in the test file.
+Nothing really changes in the way we interact with contract,
+except that it will use data from mainnet.
 
 ```ts
 const { result } = simnet.callReadOnlyFn(
