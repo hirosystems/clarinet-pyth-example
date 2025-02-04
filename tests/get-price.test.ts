@@ -76,4 +76,14 @@ describe("example tests", () => {
     // @ts-ignore
     expect(result.value.data.price).toBeInt(price1);
   });
+
+  it("can get sbtc total supply price in usd", () => {
+    const { result } = simnet.callReadOnlyFn(
+      "get-price",
+      "get-sbtc-total-usd-value",
+      [],
+      address1,
+    );
+    expect(result).toBeOk(Cl.uint(100738000));
+  });
 });

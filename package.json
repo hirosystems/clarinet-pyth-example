@@ -1,7 +1,9 @@
 {
-  "name": "pyth-client-tests",
-  "version": "1.0.0",
-  "description": "Run unit tests on this project.",
+  "name": "@hirosystems/clarinet-pyth-example",
+  "version": "0.1.0",
+  "description": "Demo Clarinet remote data fetching",
+  "license": "Apache-2.0",
+  "author": "Hiro",
   "type": "module",
   "private": true,
   "scripts": {
@@ -12,8 +14,6 @@
   "engines": {
     "node": ">=22.12.0"
   },
-  "author": "Hiro",
-  "license": "ISC",
   "dependencies": {
     "@hirosystems/clarinet-sdk": "^2.13.0-beta15",
     "@stacks/transactions": "^6.12.0",
