@@ -10,11 +10,13 @@ contract_id = 'SP3R4F6C1J3JQWWCVZ3S7FRRYPMYG6ZW6RZK31FXY.pyth-storage-v3'
 [[project.requirements]]
 contract_id = 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token'
 
+[[project.requirements]]
+contract_id = 'SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token'
+
 [contracts.get-price]
 path = 'contracts/get-price.clar'
 clarity_version = 3
 epoch = 3.1
-
 
 [repl.remote_data]
 enabled = true
