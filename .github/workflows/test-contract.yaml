@@ -1,4 +1,7 @@
-name: Test contract
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Test get-price contract
 
 on:
   push:
@@ -21,5 +24,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm i -f
-      - run: npm run test
+      - run: npm ci
+      - run: npm run test:reports
+
+      - name: Upload coverage data to codecov
+        if: ${{ matrix.node-version == '22.x' }}
+        uses: codecov/codecov-action@v4
+        with:
+          files: lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
