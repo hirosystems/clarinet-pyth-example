@@ -21,11 +21,15 @@ import {
     - vitest run -- --coverage --costs          # collect coverage and cost reports
 */
 
+const args = getClarinetVitestsArgv();
+
 export default defineConfig({
   test: {
-    environment: "clarinet", // use vitest-environment-clarinet
+    // use vitest-environment-clarinet
+    environment: "clarinet",
     pool: "forks",
     poolOptions: {
+      // run in a single thread if coverage is enabled
       forks: { singleFork: true },
     },
     setupFiles: [
@@ -34,8 +38,7 @@ export default defineConfig({
     ],
     environmentOptions: {
       clarinet: {
-        ...getClarinetVitestsArgv(),
-        // add or override options
+        ...args,
       },
     },
   },

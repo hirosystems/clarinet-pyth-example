@@ -7,7 +7,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest run -- --costs",
     "test:report": "vitest run -- --coverage --costs",
     "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\""
   },
@@ -15,7 +15,7 @@
     "node": ">=22.12.0"
   },
   "dependencies": {
-    "@hirosystems/clarinet-sdk": "^2.13.0-beta15",
+    "@hirosystems/clarinet-sdk": "^2.13.0-beta18",
     "@stacks/transactions": "^6.12.0",
     "chokidar-cli": "^3.0.0",
     "typescript": "^5.3.3",
