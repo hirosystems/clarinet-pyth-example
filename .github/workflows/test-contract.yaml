@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
+      - run: npm i -f
       - run: npm run test:reports
 
       - name: Upload coverage data to codecov
