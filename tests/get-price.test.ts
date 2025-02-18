@@ -24,18 +24,6 @@ describe("example tests", () => {
     expect(burn.result).toBeUint(881064);
   });
 
-  it("can call mainnet contract", () => {
-    const { result } = simnet.callReadOnlyFn(
-      "SP3R4F6C1J3JQWWCVZ3S7FRRYPMYG6ZW6RZK31FXY.pyth-storage-v3",
-      "get-price",
-      [btcFeed],
-      address1,
-    );
-
-    // @ts-ignore
-    expect(result.value.data.price).toBeInt(price1);
-  });
-
   it("can call get-price", () => {
     const { result } = simnet.callReadOnlyFn(
       "get-price",

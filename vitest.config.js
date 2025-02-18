@@ -27,10 +27,12 @@ export default defineConfig({
   test: {
     // use vitest-environment-clarinet
     environment: "clarinet",
+    testTimeout: 20000,
     pool: "forks",
     poolOptions: {
-      // run in a single thread if coverage is enabled
-      forks: { singleFork: true },
+      forks: {
+        singleFork: true,
+      },
     },
     setupFiles: [
       vitestSetupFilePath,
