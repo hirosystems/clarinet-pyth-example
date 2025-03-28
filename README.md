@@ -3,7 +3,7 @@
 See it in action:
 
 ```sh
-$ npm i -f
+$ npm i
 $ npm t
 ```
 
