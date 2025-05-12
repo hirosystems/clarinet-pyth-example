@@ -62,7 +62,7 @@ describe("example tests", () => {
     );
 
     // @ts-ignore
-    expect(result.value.data.price).toBeInt(price1);
+    expect(result.value.value.price).toBeInt(price1);
   });
 
   it("can get sbtc total supply price in usd", () => {
@@ -78,15 +78,16 @@ describe("example tests", () => {
 
 describe("mint-sbtc demo", () => {
   it("can get tx costs", () => {
-    const blockHeight = 1000;
+    const burnBlockHeight = 881000;
     const hash = simnet.callPublicFn(
       "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit",
       "get-burn-header",
-      [Cl.uint(blockHeight)],
+      [Cl.uint(burnBlockHeight)],
       address1,
     );
+    // hash.result is of type (some buffer)
     // @ts-ignore
-    const burnHash = hash.result.value.buffer;
+    const burnHash = hash.result.value.value;
 
     const { result, costs: _costs } = simnet.callPublicFn(
       "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-deposit",
@@ -98,8 +99,8 @@ describe("mint-sbtc demo", () => {
         Cl.uint(1),
         Cl.uint(100000000), // 1 BTC
         Cl.principal(address1),
-        Cl.buffer(burnHash),
-        Cl.uint(blockHeight),
+        Cl.bufferFromHex(burnHash),
+        Cl.uint(burnBlockHeight),
         Cl.bufferFromHex(
           "52500d11cabf1049ebb139a82b439d08bd3a8e867a41fb3f368dfa125e043989",
         ),

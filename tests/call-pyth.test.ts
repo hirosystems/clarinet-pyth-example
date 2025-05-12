@@ -25,6 +25,6 @@ describe("example tests", () => {
     );
 
     // @ts-ignore
-    expect(result.value.data.price).toBeInt(price1);
+    expect(result.value.value.price).toBeInt(price1);
   });
 });
