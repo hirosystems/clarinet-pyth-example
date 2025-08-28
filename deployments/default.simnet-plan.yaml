@@ -5,47 +5,50 @@ network: simnet
 genesis:
   wallets:
     - name: deployer
-      address: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+      address: SP1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRCBGD7R
       balance: "100000000000000"
       sbtc-balance: "1000000000"
     - name: faucet
-      address: STNHKEPYEPJ8ET55ZZ0M5A34J0R3N5FM2CMMMAZ6
+      address: SPNHKEPYEPJ8ET55ZZ0M5A34J0R3N5FM2C69MJD9
       balance: "100000000000000"
       sbtc-balance: "1000000000"
     - name: wallet_1
-      address: ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5
+      address: SP1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2XG1V316
       balance: "100000000000000"
       sbtc-balance: "1000000000"
     - name: wallet_2
-      address: ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG
+      address: SP2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CH94GRJ
       balance: "100000000000000"
       sbtc-balance: "1000000000"
     - name: wallet_3
-      address: ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC
+      address: SP2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1J5QKA2F
       balance: "100000000000000"
       sbtc-balance: "1000000000"
     - name: wallet_4
-      address: ST2NEB84ASENDXKYGJPQW86YXQCEFEX2ZQPG87ND
+      address: SP2NEB84ASENDXKYGJPQW86YXQCEFEX2ZPB1S2EP
       balance: "100000000000000"
       sbtc-balance: "1000000000"
   contracts:
+    - genesis
+    - lockup
+    - bns
+    - cost-voting
     - costs
     - pox
+    - costs-2
     - pox-2
+    - costs-3
     - pox-3
     - pox-4
-    - lockup
-    - costs-2
-    - costs-3
-    - cost-voting
-    - bns
+    - signers
+    - signers-voting
 plan:
   batches:
     - id: 0
       transactions:
         - emulated-contract-publish:
             contract-name: get-price
-            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            emulated-sender: SP1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRCBGD7R
             path: contracts/get-price.clar
             clarity-version: 3
-      epoch: "3.1"
+      epoch: "3.2"
