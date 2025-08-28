@@ -19,9 +19,9 @@ const price2 = 10622818273767;
 describe("example tests", () => {
   it("start with the right chain heights", () => {
     const stacks = simnet.execute("stacks-block-height");
-    expect(stacks.result).toBeUint(522001);
+    expect(stacks.result).toBeUint(522002);
     const burn = simnet.execute("burn-block-height");
-    expect(burn.result).toBeUint(881064);
+    expect(burn.result).toBeUint(881065);
   });
 
   it("can call get-price", () => {
