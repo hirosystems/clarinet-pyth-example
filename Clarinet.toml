@@ -20,4 +20,4 @@ epoch = "latest"
 enabled = true
 api_url = 'https://api.hiro.so'
 initial_height = 522000
-use_mainnet_wallets = false
+use_mainnet_wallets = true
