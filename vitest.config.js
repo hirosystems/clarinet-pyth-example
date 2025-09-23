@@ -25,6 +25,7 @@ const args = getClarinetVitestsArgv();
 
 export default defineConfig({
   test: {
+    silent: "passed-only",
     // use vitest-environment-clarinet
     environment: "clarinet",
     testTimeout: 20000,
